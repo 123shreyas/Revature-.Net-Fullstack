@@ -35,6 +35,26 @@ class DelegatesDemoApp
         return number % 2 == 0;
     }
 
+    public void LambdaExpressionDemo()
+    {
+        Func<int, int> f;
+
+        f= (int x) => x * x;
+        var result=f(5);
+        Console.WriteLine($"The square of 5 is: {result}");
+    }
+
+    public void AnonymousMethodDemo()
+    {
+        MathOperation operation = delegate (int a, int b)
+        {
+            Console.WriteLine($"The sum of {a} and {b} is: {a + b}");
+            return a + b;
+        };
+
+        operation(3, 4);
+    }
+
     public void Run()
     {
         // MathOperation operation = Add;
