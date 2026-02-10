@@ -1,0 +1,11 @@
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\MethodDemo\Utilities\bin\Debug\net8.0\Utilities.deps.json
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\MethodDemo\Utilities\bin\Debug\net8.0\Utilities.dll
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\MethodDemo\Utilities\bin\Debug\net8.0\Utilities.pdb
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\MethodDemo\Utilities\obj\Debug\net8.0\Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\MethodDemo\Utilities\obj\Debug\net8.0\Utilities.AssemblyInfoInputs.cache
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\MethodDemo\Utilities\obj\Debug\net8.0\Utilities.AssemblyInfo.cs
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\MethodDemo\Utilities\obj\Debug\net8.0\Utilities.csproj.CoreCompileInputs.cache
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\MethodDemo\Utilities\obj\Debug\net8.0\Utilities.dll
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\MethodDemo\Utilities\obj\Debug\net8.0\refint\Utilities.dll
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\MethodDemo\Utilities\obj\Debug\net8.0\Utilities.pdb
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\MethodDemo\Utilities\obj\Debug\net8.0\ref\Utilities.dll

@@ -1,0 +1,15 @@
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\Day6\DeligateDemo\bin\Debug\net10.0\DeligateDemo.exe
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\Day6\DeligateDemo\bin\Debug\net10.0\DeligateDemo.deps.json
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\Day6\DeligateDemo\bin\Debug\net10.0\DeligateDemo.runtimeconfig.json
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\Day6\DeligateDemo\bin\Debug\net10.0\DeligateDemo.dll
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\Day6\DeligateDemo\bin\Debug\net10.0\DeligateDemo.pdb
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\Day6\DeligateDemo\obj\Debug\net10.0\DeligateDemo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\Day6\DeligateDemo\obj\Debug\net10.0\DeligateDemo.AssemblyInfoInputs.cache
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\Day6\DeligateDemo\obj\Debug\net10.0\DeligateDemo.AssemblyInfo.cs
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\Day6\DeligateDemo\obj\Debug\net10.0\DeligateDemo.csproj.CoreCompileInputs.cache
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\Day6\DeligateDemo\obj\Debug\net10.0\DeligateDemo.sourcelink.json
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\Day6\DeligateDemo\obj\Debug\net10.0\DeligateDemo.dll
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\Day6\DeligateDemo\obj\Debug\net10.0\refint\DeligateDemo.dll
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\Day6\DeligateDemo\obj\Debug\net10.0\DeligateDemo.pdb
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\Day6\DeligateDemo\obj\Debug\net10.0\DeligateDemo.genruntimeconfig.cache
+C:\Users\shreyas magdum\Desktop\Practice\.Net\DemoApp\Day6\DeligateDemo\obj\Debug\net10.0\ref\DeligateDemo.dll
