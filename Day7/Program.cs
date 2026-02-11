@@ -1,4 +1,17 @@
-﻿var processor = new OrderProcessor();
+﻿using Day7;
+
+
+
+var processor = new OrderProcessor();
+Console.WriteLine("---------------------------------------");
+Console.WriteLine("Exception Demo:");
+Console.WriteLine("---------------------------------------");
+
+ExceptionDemo.Run();
+
+Console.WriteLine("---------------------------------------");
+Console.WriteLine("OrderProcessor Demo:");
+Console.WriteLine("---------------------------------------");
 
 processor.Process("SKU-100", 2);
 processor.Process("", -1);
