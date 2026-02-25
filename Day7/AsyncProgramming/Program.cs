@@ -1,0 +1,162 @@
+﻿using System.Diagnostics;
+//This example demonstrates how exceptions are handled when using Task.WhenAll with multiple tasks that may fail. It shows that when awaiting Task.WhenAll, only the first exception is re-thrown, and how to inspect the individual tasks to see all exceptions that occurred.
+Console.WriteLine("Starting...");
+try
+{
+    await DemonstrateExceptions();
+}
+catch (AggregateException ex)
+{
+    Console.WriteLine($"Aggregate Exception: {ex.Message}");
+}
+
+
+async Task DemonstrateExceptions()
+{
+    using var _client = new HttpClient();
+
+    var urls = new[]
+    {
+        "https://jsonplaceholder.typicode.com/posts/1",   // valid
+        "https://this-does-not-exist.invalid/post/1",       // will fail
+        "https://this-does-not-exist.invalid/post/2",       // will fail
+        "https://jsonplaceholder.typicode.com/posts/3"    // valid
+    };
+
+    var tasks = urls.Select(url => _client.GetStringAsync(url)).ToList();
+
+    try
+    {
+        Console.WriteLine($"Count: {tasks.Count}");
+        // string[] results = await Task.WaitAll(tasks.ToArray());
+        string[] results = await Task.WhenAll(tasks.ToArray());
+        Console.WriteLine($"All {results.Length} succeeded.");
+    }
+    catch (HttpRequestException ex)
+    {
+        // Only the first exception is re-thrown by await
+        Console.WriteLine($"At least one failed: {ex.Message}");
+
+        // Inspect the Task directly for all exceptions
+        foreach (var task in tasks.Where(t => t.IsFaulted))
+        {
+            Console.WriteLine($"  - {task.Exception?.InnerException?.Message}");
+        }
+    }
+
+    foreach (var task in tasks)
+    {
+
+        if (task.IsCompletedSuccessfully)
+        {
+            Console.WriteLine($"Success: {task.Result.Length} chars");
+        }
+        else if (task.IsFaulted)
+        {
+            Console.WriteLine($"Failed: {task.Exception?.InnerException?.Message}");
+        }
+    }
+}
+
+/*
+Console.WriteLine("Starting...");
+await Demos();
+// This code part demonstrates the difference between using Task.WhenAll to run multiple asynchronous operations in parallel versus running them sequentially with await in a loop. It also shows how the thread context can change when using async/await, and how it can lead to more efficient use of resources compared to blocking threads with synchronous calls.
+async Task<int> Demos()
+{
+
+    await TaskParallelDemoAsync();
+    await TaskDemoAsync();
+    // ThreadDemo();
+
+    return await Task.FromResult(0);
+}
+
+async Task TaskParallelDemoAsync()
+{
+    using var _client = new HttpClient();
+
+    var urls = Enumerable.Range(1, 10)
+        .Select(i => $"https://jsonplaceholder.typicode.com/posts/{i}")
+        .ToList();
+
+    var stopwatch = Stopwatch.StartNew();
+
+    var downloadTasks = urls.Select(async url =>
+    {
+        var threadBefore = Thread.CurrentThread.ManagedThreadId;
+
+        string content = await _client.GetStringAsync(url);
+
+        var threadAfter = Thread.CurrentThread.ManagedThreadId;
+
+        Console.WriteLine($"Thread Before: {threadBefore} downloading {url}. ({content.Length} chars) [Thread After {threadAfter}]");
+
+        return content;
+
+    });
+
+    string[] results = await Task.WhenAll(downloadTasks);
+
+    stopwatch.Stop();
+    Console.WriteLine($"\nTotal time: {stopwatch.ElapsedMilliseconds}ms");
+}
+
+async Task TaskDemoAsync()
+{
+    using var _client = new HttpClient();
+
+    var urls = Enumerable.Range(1, 10)
+        .Select(i => $"https://jsonplaceholder.typicode.com/posts/{i}")
+        .ToList();
+
+    var stopwatch = Stopwatch.StartNew();
+
+    foreach (var url in urls)
+    {
+        var threadBefore = Thread.CurrentThread.ManagedThreadId;
+
+        Console.Write($"[Thread {threadBefore}] Fetching {url}... ");
+
+        string content = await _client.GetStringAsync(url);
+
+        var threadAfter = Thread.CurrentThread.ManagedThreadId;
+
+        Console.WriteLine($"done. ({content.Length} chars) [Thread {threadAfter}]");
+    }
+
+    stopwatch.Stop();
+    Console.WriteLine($"\nTotal time: {stopwatch.ElapsedMilliseconds}ms");
+}*/
+
+
+/*
+// Console.WriteLine("Starting...");
+// ThreadDemo();
+//This code part demonstrates how using synchronous calls (like .Result) on asynchronous methods can lead to blocking the main thread and potentially causing deadlocks, while using async/await allows for non-blocking operations and better responsiveness. It also shows how the thread context can change when using async/await, and how it can lead to more efficient use of resources compared to blocking threads with synchronous calls.
+void ThreadDemo()
+{
+    using var _client = new HttpClient();
+
+    var urls = Enumerable.Range(1, 10)
+        .Select(i => $"https://jsonplaceholder.typicode.com/posts/{i}")
+        .ToList();
+
+    var stopwatch = Stopwatch.StartNew();
+
+    foreach (var url in urls)
+    {
+        int threadId = Thread.CurrentThread.ManagedThreadId;
+
+        Console.Write($"[Thread {threadId}] Fetching {url}... ");
+
+        var response = _client.GetAsync(url).Result;
+        var content = response.Content.ReadAsStringAsync().Result;
+
+        Console.WriteLine($"done. ({content.Length} chars)");
+    }
+
+    stopwatch.Stop();
+    Console.WriteLine($"\nTotal time: {stopwatch.ElapsedMilliseconds}ms");
+
+}*/
