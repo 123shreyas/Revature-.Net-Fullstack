@@ -1,0 +1,62 @@
+﻿using MyApp;
+
+namespace MyApp.Tests;
+
+
+public class CalculatorTests
+{
+    [Theory]
+    [InlineData(2, 3, 5)]
+    [InlineData(0, 0, 0)]
+    [InlineData(-1, 1, 0)]
+    public void Add_TwoNumbers_GivesCorrectResult(int x, int y, int expectedResult)
+    {
+        // Arrange
+        var calculator = new Calculator();
+        // system under test
+        // var sut = new Calculator();
+
+        // manual calculation
+        // var x = 5;
+        // var y = 10;
+        // var expectedResult = 15;
+
+        // Act
+        var actualResult = calculator.Add(x, y);
+
+        // Assert
+        Assert.Equal(expected: expectedResult, actual: actualResult);
+    }
+
+    [Theory]
+    [InlineData(2, 3, -1)]
+    [InlineData(0, 0, 0)]
+    [InlineData(-1, 1, -2)]
+    public void Subtract_TwoNumbers_GiveCorrectResult(int x, int y, int expectedResult)
+    {
+        // Arrange
+        var calculator = new Calculator();
+
+        // Act
+        var actualResult = calculator.Subtract(x, y);
+
+        // Assert
+        Assert.Equal(expected: expectedResult, actual: actualResult);
+    }
+
+    [Theory]
+    [InlineData(5, 5, 25)]
+    [InlineData(0, 0, 0)]
+    [InlineData(2, 1, 2)]
+    public void Multiply_TwoNumbers_GiveCorrectResult(int x, int y, int expectedResult)
+    {
+        // Arrange
+        var calculator = new Calculator();
+
+        // Act
+        var actualResult = calculator.Multiply(x, y);
+
+        // Assert
+        Assert.Equal(expected: expectedResult, actual: actualResult);
+    }
+}
