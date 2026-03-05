@@ -1,6 +1,4 @@
-
 using Microsoft.EntityFrameworkCore;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // add appsettings.json
@@ -11,6 +9,12 @@ builder.Services.AddControllers();
 // register DbContext and CustomerService
 builder.Services.AddScoped<CrmDbContext>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+
+// AutoMapper
+builder.Services.AddAutoMapper(config =>
+{
+    config.AddProfile<CustomerProfile>();
+});
 
 // Add Sql Server
 builder.Services.AddDbContext<CrmDbContext>(options =>

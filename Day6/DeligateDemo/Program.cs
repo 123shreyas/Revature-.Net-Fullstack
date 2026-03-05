@@ -1,13 +1,13 @@
-﻿namespace DeligateDemo;
+﻿// namespace DeligateDemo;
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        LinqDemo demo = new LinqDemo();
-        demo.Run();
-    }
-}
+// class Program
+// {
+//     static void Main(string[] args)
+//     {
+//         LinqDemo demo = new LinqDemo();
+//         demo.Run();
+//     }
+// }
 
 
 // // Leacture 6 : Deligate in C# code
@@ -194,71 +194,71 @@ class Program
 
 // // My Code 
 
-// // using System;
+using System;
 
-// // namespace DeligateDemo
+namespace DeligateDemo
 
-// // {   
-// //    class Program
-// //     {
-// //         static void Main(string[] args)
-// //         {
-// //             DeligateDemo demo = new DeligateDemo();
-// //             demo.Run();
-// //         }
-// //     }
+{   
+   class Program
+    {
+        static void Main(string[] args)
+        {
+            DeligateDemo demo = new DeligateDemo();
+            demo.Run();
+        }
+    }
     
-// //     public class DeligateDemo
-// //     {
-// //          delegate int MathOperation(int a, int b);
+    public class DeligateDemo
+    {
+         delegate int MathOperation(int a, int b);
 
-// //          public void Run()
-// //         {
-// //             MathOperation operation =add;
+         public void Run()
+        {
+            MathOperation operation =add;
 
-// //             // Multicast Deligate : Adding more methods to invoke It
-// //             operation += subtract;
-// //             operation += Multiply;
-// //             operation +=Division;
+            // Multicast Deligate : Adding more methods to invoke It
+            operation += subtract;
+            operation += Multiply;
+            operation +=Division;
 
-// //             var result=operation(10,5);
-// //             Console.WriteLine("Result : "+ result);
+            var result=operation(10,5);
+            Console.WriteLine("Result : "+ result);
 
-// //         }
+        }
 
-// //          public int add(int a, int b)
-// //          {
-// //              Console.WriteLine("Addition: " + (a + b));
-// //              return a+b;
-// //          }
+         public int add(int a, int b)
+         {
+             Console.WriteLine("Addition: " + (a + b));
+             return a+b;
+         }
 
-// //          public int subtract(int a, int b)
-// //          {
-// //              Console.WriteLine("Subtraction: " + (a - b));
-// //              return a-b;
-// //          }
+         public int subtract(int a, int b)
+         {
+             Console.WriteLine("Subtraction: " + (a - b));
+             return a-b;
+         }
 
-// //          public int Multiply(int a, int b)
-// //          {
-// //              Console.WriteLine("Multiply: " + (a * b));
-// //              return a*b;
-// //          }
+         public int Multiply(int a, int b)
+         {
+             Console.WriteLine("Multiply: " + (a * b));
+             return a*b;
+         }
 
-// //          public int Division(int a, int b)
-// //          {
-// //              if (b == 0)
-// //              {
-// //                  Console.WriteLine("Cannot divide by zero.");
-// //                  return 0; // or throw an exception
-// //              }
-// //              else {
-// //              Console.WriteLine("Division: " + (a / b));
-// //              return a/b;
-// //              }
-// //          }
+         public int Division(int a, int b)
+         {
+             if (b == 0)
+             {
+                 Console.WriteLine("Cannot divide by zero.");
+                 return 0; // or throw an exception
+             }
+             else {
+             Console.WriteLine("Division: " + (a / b));
+             return a/b;
+             }
+         }
 
 
        
-// //         }
-// //     }
+        }
+    }
 
