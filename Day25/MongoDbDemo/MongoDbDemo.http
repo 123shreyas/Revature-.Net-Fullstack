@@ -1,0 +1,34 @@
+@MongoDbDemo_HostAddress = http://localhost:5287
+
+GET {{MongoDbDemo_HostAddress}}/api/Books
+Accept: application/json
+
+###
+POST {{MongoDbDemo_HostAddress}}/api/Books
+Content-Type: application/json
+
+
+{
+  "Name": "Rich Dad Poor Dad",
+  "Author": "Robert",
+  "Price": 300,
+  "Category": "Self Development"
+}
+
+
+### Update Book
+PUT {{MongoDbDemo_HostAddress}}/api/Books/69b140029a018f7a0e3fabb4
+Content-Type: application/json
+
+{
+  "Name": "Clean Code Updated",
+  "Author": "Robert C Martin",
+  "Price": 600,
+  "Category": "Software Engineering"
+}
+
+###
+
+### Delete Book
+DELETE {{MongoDbDemo_HostAddress}}/api/Books/69b140029a018f7a0e3fabb4
+Accept: application/json

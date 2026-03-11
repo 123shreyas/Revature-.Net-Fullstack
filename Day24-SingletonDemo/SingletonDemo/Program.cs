@@ -51,11 +51,12 @@ public class DiSignleton
 //     private static SingletonLogger? singletonInstance;
 //     private SingletonLogger() { }
 
-//     // Factory
+//     // Factory Method 
 //     public static SingletonLogger CreateStaticLogger()
 //     {
 //         // singletonInstance ??= new SingletonLogger();
-
+        
+        // The Code is not Thread safe SO we use lock to make it thread safe
 //         lock (typeof(SingletonLogger))
 //         {
 //             // Critical Session
